@@ -2,7 +2,7 @@
 pipeline {
   agent any
     
-  tools {openjdk "openjdk"}
+  tools {jdk "jdk"}
     
   stages {
         
