@@ -12,13 +12,13 @@ pipeline {
         
     stage('Install dependencies') {
       steps {
-        sh 'maven clean'
+        sh 'mvn clean package'
       }
     }
      
     stage('Test') {
       steps {
-         sh 'maven install'
+         sh 'mvn install package'
       }
     }      
   }
