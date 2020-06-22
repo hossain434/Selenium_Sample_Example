@@ -1,9 +1,7 @@
 //Jenkins file example
 pipeline {
   agent any
-    
- tools {'maven'}
-    
+        
   stages {
         
     stage('Cloning Git') {
