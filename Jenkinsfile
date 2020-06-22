@@ -2,7 +2,7 @@
 pipeline {
   agent any
     
-  tools {jdk "jdk"}
+  tools {java "java"}
     
   stages {
         
