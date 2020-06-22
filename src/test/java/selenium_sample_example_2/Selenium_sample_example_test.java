@@ -11,7 +11,8 @@ public class Selenium_sample_example_test {
 	//public static void main(String args[]) {
 	@Test
 	  public void verifyHomepageTitle() {
-		System.setProperty("webdriver.chrome.driver","chromedriver/chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver","chromedriver/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("headless");
 		WebDriver driver = new ChromeDriver(options);
