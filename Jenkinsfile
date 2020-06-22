@@ -2,7 +2,9 @@
 pipeline {
   agent any
     
-  tools {java "jdk"}
+        node {
+            label 'maven'
+        }
     
   stages {
         
