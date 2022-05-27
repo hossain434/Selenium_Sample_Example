@@ -15,7 +15,8 @@ public class Selenium_sample_example_test {
 		System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("headless");
-		WebDriver driver = new ChromeDriver(options);
+		//WebDriver driver = new ChromeDriver(options);
+		WebDriver driver = new RemoteWebDriver(new URL("http://10.0.0.158:4444/wd/hub"), options);
 		String baseUrl = "http://demo.guru99.com/test/newtours/";
 		String expectedTitle = "Welcome: Mercury Tours";
 		String actualTitle = "";
