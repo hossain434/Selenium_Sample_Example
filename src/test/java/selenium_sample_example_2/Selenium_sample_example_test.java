@@ -1,32 +1,29 @@
 package selenium_sample_example_2;
+import java.net.MalformedURLException;
+import java.net.URL;
 
-import org.testng.annotations.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Test;
 
+public class GridDemo {
+	
+  @Test
+    public void login() throws MalformedURLException{
+        DesiredCapabilities dr = DesiredCapabilities.chrome();
+//specify the browser
+        dr.setBrowserName("firefox");  
+//specify the environment                
+        dr.setPlatform(Platform.WINDOWS);     
+     
+  //specify the hub URL           
+        RemoteWebDriver driver=new RemoteWebDriver(new URL("http://10.0.0.158:4444/wd/hub"), dr);
+        driver.navigate().to("https://opensource-demo.orangehrmlive.com/");
+        driver.findElement(By.id("txtUsername")).sendKeys("Admin");
+        driver.findElement(By.id("txtPassword")).sendKeys("admin123");
+        driver.close();
 
-public class Selenium_sample_example_test {
-
-	//public static void main(String args[]) {
-	@Test
-	  public void verifyHomepageTitle() {
-		//System.setProperty("webdriver.chrome.driver","chromedriver/chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("headless");
-		//WebDriver driver = new ChromeDriver(options);
-		WebDriver driver = new RemoteWebDriver(new URL("http://10.0.0.158:4444/wd/hub"), options);
-		String baseUrl = "http://demo.guru99.com/test/newtours/";
-		String expectedTitle = "Welcome: Mercury Tours";
-		String actualTitle = "";
-		driver.get(baseUrl);
-		actualTitle = driver.getTitle();
-		if (actualTitle.contentEquals(expectedTitle)) {
-			System.out.println("Test Passed: Title is - " +actualTitle);
-		} else {
-			System.out.println("Test Failed" );
-		}
-		driver.close();
-	}
+}
 }
