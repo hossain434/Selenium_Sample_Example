@@ -13,8 +13,8 @@ public class Selenium_sample_example_test {
 	  public void verifyHomepageTitle() {
 	  ChromeOptions chromeOptions = new ChromeOptions();
 	  chromeOptions.addArguments("headless");
-      //WebDriver driver = new RemoteWebDriver(new URL("http://10.0.0.158:4444/wd/hub"), chromeOptions);
-      WebDriver driver = new ChromeDriver(chromeOptions);
+      WebDriver driver = new RemoteWebDriver(new URL("http://10.0.0.158:4444/wd/hub"), chromeOptions);
+      //WebDriver driver = new ChromeDriver(chromeOptions);
       driver.get("http://www.google.com");
       	  driver.quit();
 	}
