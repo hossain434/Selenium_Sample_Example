@@ -8,7 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
-public class GridDemo {
+public class Selenium_sample_example_test {
 	
   @Test
     public void login() throws MalformedURLException{
