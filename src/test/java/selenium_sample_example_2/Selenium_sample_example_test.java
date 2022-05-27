@@ -14,7 +14,6 @@ public class Selenium_sample_example_test {
 	  ChromeOptions chromeOptions = new ChromeOptions();
       WebDriver driver = new RemoteWebDriver(new URL("http://10.0.0.158:4444/wd/hub"), chromeOptions);
       driver.get("http://www.google.com");
-	}
-	  driver.quit();
+      	  driver.quit();
 	}
 	}
